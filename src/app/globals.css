@@ -1,0 +1,49 @@
+:root {
+  --obsidian: #0b0b0b;
+  --graphite: #2a2a2e;
+  --smoke: #6b6b6f;
+  --silver: #c9c9cd;
+  --pearl: #eae6e1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--obsidian);
+  color-scheme: dark;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--pearl);
+  font-family: var(--font-ui), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--silver);
+  color: var(--obsidian);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

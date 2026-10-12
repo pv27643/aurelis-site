@@ -1,0 +1,212 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 1.5rem 2rem;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.header p,
+.blockout,
+.eyebrow,
+.edition,
+.scrollCue,
+.footer {
+  color: var(--smoke);
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.wordmark {
+  color: var(--pearl);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0.34em;
+  pointer-events: auto;
+}
+
+.story {
+  min-height: 500svh;
+  position: relative;
+}
+
+.viewport {
+  background:
+    radial-gradient(circle at 50% 45%, #1a1a1c 0, var(--obsidian) 52%),
+    var(--obsidian);
+  height: 100svh;
+  position: sticky;
+  top: 0;
+}
+
+.viewport::after {
+  border: 1px solid rgb(201 201 205 / 12%);
+  content: "";
+  inset: 1rem;
+  pointer-events: none;
+  position: absolute;
+}
+
+.blockout {
+  bottom: 1.75rem;
+  position: absolute;
+  right: 2rem;
+  z-index: 2;
+}
+
+.chapters {
+  margin-top: -100svh;
+  position: relative;
+  z-index: 2;
+}
+
+.chapter {
+  align-items: center;
+  display: grid;
+  min-height: 100svh;
+  padding: 7rem clamp(1.5rem, 6vw, 6rem) 5rem;
+  pointer-events: none;
+  position: relative;
+}
+
+.copyLeft,
+.copyRight {
+  max-width: 31rem;
+}
+
+.copyRight {
+  justify-self: end;
+  text-align: right;
+}
+
+.eyebrow {
+  color: var(--silver);
+  margin-bottom: 1.25rem;
+}
+
+.heroTitle,
+.title {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.heroTitle {
+  font-size: clamp(3.25rem, 8vw, 8rem);
+  font-style: italic;
+}
+
+.title {
+  font-size: clamp(2.75rem, 5.6vw, 6rem);
+}
+
+.intro {
+  color: var(--silver);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  margin-top: 1.75rem;
+  max-width: 23rem;
+}
+
+.edition {
+  color: var(--silver);
+  margin-top: 1.75rem;
+}
+
+.scrollCue {
+  align-items: center;
+  bottom: 2rem;
+  display: flex;
+  gap: 0.75rem;
+  left: clamp(1.5rem, 6vw, 6rem);
+  position: absolute;
+}
+
+.scrollCue span {
+  background: var(--silver);
+  display: block;
+  height: 1px;
+  width: 2.5rem;
+}
+
+.footer {
+  align-items: center;
+  background: var(--obsidian);
+  border-top: 1px solid rgb(201 201 205 / 14%);
+  display: flex;
+  justify-content: space-between;
+  min-height: 26svh;
+  padding: 3rem clamp(1.5rem, 6vw, 6rem);
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .header p {
+    display: none;
+  }
+
+  .viewport::after {
+    inset: 0.75rem;
+  }
+
+  .chapter {
+    align-items: end;
+    padding-bottom: 7rem;
+  }
+
+  .copyLeft,
+  .copyRight {
+    justify-self: start;
+    max-width: 20rem;
+    text-align: left;
+  }
+
+  .heroTitle,
+  .title {
+    font-size: clamp(2.7rem, 14vw, 4.5rem);
+  }
+
+  .blockout {
+    bottom: 1.25rem;
+    max-width: 12rem;
+    right: 1.5rem;
+    text-align: right;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story {
+    min-height: auto;
+  }
+
+  .viewport {
+    position: relative;
+  }
+
+  .chapters {
+    margin-top: 0;
+  }
+
+  .chapter {
+    min-height: 70svh;
+  }
+}
